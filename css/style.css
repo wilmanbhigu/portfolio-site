@@ -19,17 +19,16 @@ body {
 	position: relative;
 	text-align: center;
 	padding-top: 60vh;
+	color: #EEE;
 }
 
 .main h1 {
-	color: #FFF;
 	font-weight: 600;
 	font-size: 2.25em;
 	margin-top: 0;
 }
 
 .main h4 {
-	color: #FFF;
 	font-weight: 600;
 	margin-top: 0;
 }
@@ -68,12 +67,14 @@ text-align: center;
 .navigation {
 	text-align: center;
 	margin: 0 auto;
-	border-top: 2px solid #FFF;
+	width: auto;
+	display: inline-block;
 }
 
 .navigation ul {
 	list-style: none;
 	width: auto;
+	border-top: 2px solid #EEE;
 }
 
 .navigation ul li {
@@ -83,7 +84,7 @@ text-align: center;
 
 .navigation ul li a {
 	vertical-align: center;
-	color: #FFF;
+	color: #EEE;
 	font: bold 1.5em Arial;
 	opacity: 1;
 	text-decoration: none;
