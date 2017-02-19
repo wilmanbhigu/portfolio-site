@@ -11,14 +11,14 @@ body {
 }
 
 .container {
-	max-width: 950px;
 	margin: 0 auto;
+	background-color: #4982AC;
+	height: 100vh;
 }
 
 .main {
-	position: relative;
 	text-align: center;
-	padding-top: 60vh;
+	padding-top: 30vh;
 	color: #EEE;
 }
 
@@ -34,17 +34,21 @@ body {
 }
 
 #IDPhoto {
-	max-width: 200px;
-	width: 20%;
+	height: 200px;
+	width: 200px;
+	background: url('images/profile.jpg') no-repeat center center;
+	background-size: contain;
 	overflow: hidden;
-	border-radius: 100%;
+	border-radius: 50%;
 	border: 2px solid #000;
 	margin: 0 auto;
 }
 
 .content{
-	display: table-cell;
-	margin: 5px;
+	margin: 0 auto;
+	max-width: 950px;
+	height: 100vh;
+	padding: 5px;
 	vertical-align: top;
 	padding: 5px;
 	font: 0.8em Verdana, Arial, Helvetica, sans-serif;
@@ -83,7 +87,6 @@ text-align: center;
 }
 
 .navigation ul li a {
-	vertical-align: center;
 	color: #EEE;
 	font: bold 1.5em Arial;
 	opacity: 1;
@@ -99,9 +102,20 @@ text-align: center;
 	color: #999;
 }
 
-#footer {
+.footer {
+	display: table-cell;
+	width: 100vw;
 	padding: 5px;
 	text-align: center;
-	border-top: 1px solid #666;
-	min-height: 100px;
+	height: 100px;
+	background-color: #2E4F68;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.footer p{
+	color: #9AB5B7;
+	font-size: 0.75em;
+	float: right;
+	margin-right: 5%;
 }
