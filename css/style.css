@@ -4,22 +4,36 @@ body {
 }
 
 .jumbotron {
+	position: static;
 	background: url('images/beach.jpg') no-repeat center center;
 	background-size: cover;
 	height: 100vh;
 	width: auto;
+	z-index: 0;
+	color: #C8E0F4;
 }
 
 .container {
+	position: relative;
 	margin: 0 auto;
-	background-color: #4982AC;
+	background-color: #C8E0F4;
 	height: 100vh;
+	z-index: 1;
+	border-top: 2px solid #000;
 }
 
 .main {
 	text-align: center;
-	padding-top: 30vh;
-	color: #EEE;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+}
+
+#banner_content {
+	background-color: rgba(0,0,0,0.3);
+	padding: 5px;
+	border-radius: 50px;
 }
 
 .main h1 {
@@ -51,14 +65,16 @@ body {
 	padding: 5px;
 	vertical-align: top;
 	padding: 5px;
-	font: 0.8em Verdana, Arial, Helvetica, sans-serif;
+	font: 0.8em Arial, Helvetica, sans-serif;
 	text-align: left;
+	color: #031927;
 }
 .content p{
 	text-align: left;
 }
-#title h1,h3,p{
-text-align: center;
+.content h1 {
+	color: #CF5C36;
+	text-transform: uppercase;
 }
 .content p a {
 	text-decoration: none;
@@ -68,28 +84,21 @@ text-align: center;
 	color: #6C6;
 }
 
-.navigation {
-	text-align: center;
-	margin: 0 auto;
-	width: auto;
-	display: inline-block;
-}
-
 .navigation ul {
 	list-style: none;
-	width: auto;
-	border-top: 2px solid #EEE;
+	margin: 0;
+	padding: 0 10px;
+	border-top: 2px solid #C8E0F4;
 }
 
 .navigation ul li {
-	display: inline;
-	padding: 0 30px;
+	display: inline-block;
+	padding: 5px 30px;
 }
 
 .navigation ul li a {
-	color: #EEE;
+	color: #C8E0F4;
 	font: bold 1.5em Arial;
-	opacity: 1;
 	text-decoration: none;
 	/*Creates a fading effect during rollover*/
 	-moz-transition: color 0.5s ease-out;
@@ -99,7 +108,7 @@ text-align: center;
 }
 
 .navigation ul li a:hover {
-	color: #999;
+	color: #508AA8;
 }
 
 .footer {
@@ -108,13 +117,13 @@ text-align: center;
 	padding: 5px;
 	text-align: center;
 	height: 100px;
-	background-color: #2E4F68;
+	background-color: #031927;
 	text-align: center;
 	vertical-align: middle;
 }
 
 .footer p{
-	color: #9AB5B7;
+	color: #508AA8;
 	font-size: 0.75em;
 	float: right;
 	margin-right: 5%;
