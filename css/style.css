@@ -49,8 +49,10 @@ body {
 }
 
 #IDPhoto {
-	height: 200px;
-	width: 200px;
+	height: 40vw;
+	width: 40vw;
+	max-width: 200px;
+	max-height: 200px;
 	background: url('images/profile.jpg') no-repeat center center;
 	background-size: contain;
 	overflow: hidden;
