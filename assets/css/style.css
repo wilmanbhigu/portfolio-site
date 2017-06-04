@@ -2,6 +2,7 @@
 body {
 	font-family: arial, helvetica, sans-serif;
  	margin: 0 0 0 0;
+	min-width: 500px;
 }
 
 .jumbotron {
@@ -71,7 +72,6 @@ body {
 	font: 1.2em Arial, Helvetica, sans-serif;
 	text-align: left;
 	color: #031927;
-	padding: 0 60px 0 60px;
 }
 .content p{
 	text-align: left;
