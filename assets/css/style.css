@@ -40,9 +40,8 @@ body {
 }
 
 .main h1 {
-	font-weight: 600;
 	font-size: 2.25em;
-	margin-top: 0;
+	font-family: 'Acme', sans-serif;
 }
 
 .main h4 {
@@ -65,7 +64,7 @@ body {
 
 .content{
 	margin: 0 auto;
-	margin-top: 50px;
+	margin-top: 1em;
 	max-width: 1150px;
 	width:100%;
 	min-height: 100vh;
@@ -79,7 +78,7 @@ body {
 }
 .content h1 {
 	color: #CF5C36;
-	text-transform: uppercase;
+	font-family: 'Acme', sans-serif;
 	margin: 0;
 }
 .content p a {
@@ -221,10 +220,9 @@ body {
 		display: block;
 		width: 100%;
 	}
-	/*.main ul li {
-		display: block;
-		margin: 0 0 0.5em 0;
-	}*/
+	.main ul li img {
+		width: 40px;
+	}
 	#pic {
 		margin: 1em 0 2em 0;
 	}
