@@ -54,7 +54,7 @@ body {
 	width: 45vw;
 	max-width: 200px;
 	max-height: 200px;
-	background: url('../images/profile.jpg') no-repeat center center;
+	background: url('../images/profile.png') no-repeat center center;
 	background-size: contain;
 	overflow: hidden;
 	border-radius: 50%;
