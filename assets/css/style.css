@@ -7,7 +7,7 @@ body {
 .jumbotron {
 	position: static;
 	background: rgba(61,97,116,1);
-	background: url('../images/beach.jpg') no-repeat center center;
+	background: url('../images/beach_lge.jpg') no-repeat center center;
 	background-size: cover;
 	height: 100vh;
 	width: auto;
@@ -54,7 +54,7 @@ body {
 	width: 45vw;
 	max-width: 200px;
 	max-height: 200px;
-	background: url('../images/profile.png') no-repeat center center;
+	background: url('../images/profile_lge.png') no-repeat center center;
 	background-size: contain;
 	overflow: hidden;
 	border-radius: 50%;
@@ -225,5 +225,8 @@ body {
 	}
 	#pic {
 		margin: 1em 0 2em 0;
+	}
+	#IDPhoto {
+		background: url('../images/profile_sml.png') no-repeat center center;
 	}
 }
