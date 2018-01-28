@@ -246,6 +246,7 @@ h3 {
 }
 
 button.top {
+	background-color: #FFF;
 	float: right;
 	margin-bottom: 0.5em;
 	height: 1.2em;
