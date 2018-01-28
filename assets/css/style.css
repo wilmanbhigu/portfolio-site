@@ -44,6 +44,19 @@ body {
 	font-family: 'Acme', sans-serif;
 }
 
+h2 {
+	font-size: 1.2em;
+	font-weight: bold;
+	color: #508AA8;
+}
+h3 {
+	font-size: 0.8em;
+	font-weight: lighter;
+	color: #031927;
+	font-style: italic;
+	margin-top: -1em;
+}
+
 .main h4 {
 	font-weight: 600;
 	margin-top: 0;
@@ -191,24 +204,71 @@ body {
 }
 .post {
 	margin: 0 auto;
+	margin-bottom: 1em;
 	overflow: auto;
 	width: 90%;
+	border-bottom: 1px solid #888;
+}
+
+.post:last-of-type {
+	border: 0;
 }
 #text {
-	width: 50%;
-}
-#pic {
-	width: 40%;
-	float: right;
-}
-#pic img {
 	width: 100%;
 }
-#pic p {
+#pic_right {
+	width: 40%;
+	float: right;
+	margin: 0 0 1em 1em;
+}
+#pic_right img {
+	width: 100%;
+}
+#pic_right p {
 	font-size: 0.7em;
 	color: #508aa8;
 	font-weight: bold;
 	margin-top: -3px;
+}
+
+#pic_centre {
+	width: 100%;
+	margin: 1em 0;
+}
+#pic_centre img {
+	width: 100%;
+}
+#pic_centre p {
+	font-size: 0.7em;
+	color: #508aa8;
+	font-weight: bold;
+	margin-top: -3px;
+}
+
+button.top {
+	float: right;
+	margin-bottom: 0.5em;
+	height: 1.2em;
+	width: 1.2em;
+	border-radius: 100%;
+	border: 3px solid #CF5C36;
+	font-size: 2em;
+	color: #CF5C36;
+	outline: none;
+	text-decoration: none;
+	-moz-transition: border-color 0.3s ease-out;
+	-webkit-transition: border-color 0.3s ease-out;
+	-o-transition: border-color 0.3s ease-out;
+	transition: border-color 0.3s ease-out;
+	-moz-transition: color 0.3s ease-out;
+	-webkit-transition: color 0.3s ease-out;
+	-o-transition: color 0.3s ease-out;
+	transition: color 0.3s ease-out;
+}
+
+button.top:hover{
+	border-color: #508AA8;
+	color: #508AA8;
 }
 
 @media only screen and (max-width: 480px){
@@ -216,14 +276,14 @@ body {
 		display: block;
 		width: 100%;
 	}
-	.post #pic {
+	.post #pic_right {
 		display: block;
 		width: 100%;
 	}
 	.main ul li img {
 		width: 40px;
 	}
-	#pic {
+	#pic_right {
 		margin: 1em 0 2em 0;
 	}
 	#IDPhoto {
