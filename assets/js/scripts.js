@@ -15,7 +15,10 @@ $(".top").click(function() {
 
 $(document).ready(function () {
     var about = readTextFile("https://andrewrobilliard.com/assets/blogPosts/about.htm");
-    $('.content').append(about);
+    if (about != -1){
+        $('.content').append(about);
+    }
+    
     var count = 1;
     var post = readTextFile("https://andrewrobilliard.com/assets/blogPosts/b"+count+".htm");
     while(post != -1){
