@@ -14,7 +14,18 @@ $(".top").click(function() {
 });
 
 $(document).ready(function () {
-  var post = readTextFile("http://andrewrobilliard.com/assets/blogPosts/b1");
+    var about = readTextFile("https://andrewrobilliard.com/assets/blogPosts/about.htm");
+    $('.content').append(about);
+    var count = 1;
+    var post = readTextFile("https://andrewrobilliard.com/assets/blogPosts/b"+count+".htm");
+    while(post != -1){
+        if(count == 1){
+            $('.content').append('<h1>Blog</h1>')
+        }
+        post = readTextFile("https://andrewrobilliard.com/assets/blogPosts/b"+count+".htm");
+        $('.content').append(allText);
+        count++;
+    }
 });
 
 function readTextFile(file)
@@ -28,9 +39,10 @@ function readTextFile(file)
             if(rawFile.status === 200 || rawFile.status == 0)
             {
                 var allText = rawFile.responseText;
-                alert(allText);
+                return allText;
             }
         }
     }
     rawFile.send(null);
+    return -1;
 }
