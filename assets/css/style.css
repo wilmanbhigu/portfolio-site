@@ -38,6 +38,12 @@ body {
 	padding: 5px;
 	border-radius: 50px;
 }
+.content h1 {
+	color: #CF5C36;
+	font-family: 'Acme', sans-serif;
+	margin: 0 auto;
+	width: 90%;
+}
 
 .main h1 {
 	font-size: 2.25em;
@@ -88,11 +94,6 @@ h3 {
 }
 .content p{
 	text-align: left;
-}
-.content h1 {
-	color: #CF5C36;
-	font-family: 'Acme', sans-serif;
-	margin: 0;
 }
 .content p a {
 	text-decoration: none;
