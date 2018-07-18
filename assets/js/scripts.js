@@ -1,18 +1,3 @@
-$("#about").click(function() {
-  $('html,body').animate({
-    scrollTop: $(".post#about").offset().top},'slow');
-});
-
-$("#blog").click(function() {
-  $('html,body').animate({
-    scrollTop: $(".post#blog").offset().top},'slow');
-});
-
-$(".top").click(function() {
-  $('html,body').animate({
-    scrollTop: $("body").offset().top},'slow');
-});
-
 $(document).ready(function () {
     var about = httpGet("https://andrewrobilliard.com/assets/blogPosts/about.htm");
     if (about != -1){
@@ -29,13 +14,29 @@ $(document).ready(function () {
         $('.content').append(post);
         count++;
     }
+
+    $("#about").click(function() {
+        $('html,body').animate({
+          scrollTop: $(".post#about").offset().top},'slow');
+      });
+      
+      $("#blog").click(function() {
+        $('html,body').animate({
+          scrollTop: $(".post#blog").offset().top},'slow');
+      });
+      
+      $(".top").click(function() {
+          console.log('clicked');
+        $('html,body').animate({
+          scrollTop: $("body").offset().top},'slow');
+      });
 });
 
 function httpGet(theUrl)
 {
     console.log("GET request placed for url: "+theUrl)
     var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+    xmlHttp.open( "GET", theUrl, false );
     xmlHttp.send( null );
     return xmlHttp.responseText;
 }
