@@ -17,9 +17,9 @@ body {
 .container {
 	position: relative;
 	margin: 0 auto;
-	background-color: #FFF;
+	background-color: #eeeeee;
 	min-height: 100vh;
-	border-top: 1px solid #fff;
+	border-top: 1px solid #eeeeee;
 }
 
 .main {
