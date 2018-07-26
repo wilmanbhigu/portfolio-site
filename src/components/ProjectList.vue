@@ -1,0 +1,61 @@
+<template>
+  <div class="container">
+    <h3>Projects</h3>
+    <input type="text" v-model="search" placeholder="Search blogs" />
+    <div class="row">
+      <div v-if="loaded" v-for="blog in filteredBlogs" :key="blog.id" class="col s12 m6 l4">
+        <image-card v-bind:card="blog"></image-card>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import ImageCard from './ImageCard.vue';
+import searchMixin from '../mixins/searchMixin';
+
+export default {
+  data() {
+    return {
+      blogs: [],
+      loaded: false,
+      search: ''
+    };
+  },
+  methods: {
+    dateCompare(a, b) {
+      if (a.created == null) return -1;
+      if (b.created == null) return 1;
+
+      a = new Date(a.created);
+      b = new Date(b.created);
+      return a > b ? -1 : a < b ? 1 : 0;
+    }
+  },
+  created() {
+    this.$http
+      .get(`${this.$baseUrl}/posts.json`)
+      .then(data => {
+        return data.json();
+      })
+      .then(data => {
+        var blogsArray = [];
+        for (let key in data) {
+          data[key].id = key;
+          //override title for front end
+          data[key].title = 'Project Placeholder';
+          blogsArray.push(data[key]);
+        }
+        this.blogs = blogsArray.sort(this.dateCompare);
+        this.loaded = true;
+      });
+  },
+  mixins: [searchMixin],
+  components: {
+    'image-card': ImageCard
+  }
+};
+</script>
+
+<style>
+</style>
