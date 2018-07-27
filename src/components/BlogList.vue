@@ -3,7 +3,7 @@
     <h3>All Blog Articles</h3>
     <input type="text" v-model="search" placeholder="Search blogs" />
     <div class="row">
-      <div v-for="blog in filteredBlogs" :key="blog.id" class="col s12 m6 l4">
+      <div v-if="loaded" v-for="blog in filteredBlogs" :key="blog.id" class="col s12 m6 l4">
         <image-card v-bind:card="blog"></image-card>
       </div>
     </div>
@@ -18,6 +18,7 @@ export default {
   data() {
     return {
       blogs: [],
+      loaded: false,
       search: ''
     };
   },
@@ -43,7 +44,9 @@ export default {
           data[key].id = key;
           blogsArray.push(data[key]);
         }
+        document.title = 'Projects - Andrew Robilliard';
         this.blogs = blogsArray.sort(this.dateCompare);
+        this.loaded = true;
       });
   },
   filters: {

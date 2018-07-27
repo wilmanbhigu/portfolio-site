@@ -46,6 +46,7 @@ export default {
           data[key].title = 'Project Placeholder';
           blogsArray.push(data[key]);
         }
+        document.title = 'Blogs - Andrew Robilliard';
         this.blogs = blogsArray.sort(this.dateCompare);
         this.loaded = true;
       });
