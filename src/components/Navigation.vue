@@ -35,6 +35,12 @@
       </div>
     </nav>
     <ul id="mobile-links" class="sidenav">
+      <li v-if="!this.signedIn" v-bind:class="{ active: activePage === 'login'}">
+        <a href="/login"><i class="material-icons right">exit_to_app</i>Sign In</a>
+      </li>
+      <li v-else>
+        <a href="/account"><i class="material-icons right">account_circle</i>My Account</a>
+      </li>
       <li v-bind:class="{ active: activePage === ''}">
         <a href="/"><i class="material-icons right">home</i>Home</a>
       </li>
