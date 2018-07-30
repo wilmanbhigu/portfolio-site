@@ -1,11 +1,16 @@
 <template>
   <div class="container">
     <h3>Projects</h3>
-    <input type="text" v-model="search" placeholder="Search blogs" />
-    <div class="row">
-      <div v-if="loaded" v-for="blog in filteredBlogs" :key="blog.id" class="col s12 m6 l4">
-        <image-card v-bind:card="blog"></image-card>
+    <div v-if="blogs.length > 0">
+      <input type="text" v-model="search" placeholder="Search blogs" />
+      <div class="row">
+        <div v-if="loaded" v-for="blog in filteredBlogs" :key="blog.id" class="col s12 m6 l4">
+          <image-card v-bind:card="blog"></image-card>
+        </div>
       </div>
+    </div>
+    <div v-else-if="loaded">
+      <p>No projects found.</p>
     </div>
   </div>
 </template>
@@ -42,11 +47,9 @@ export default {
         var blogsArray = [];
         for (let key in data) {
           data[key].id = key;
-          //override title for front end
-          data[key].title = 'Project Placeholder';
           blogsArray.push(data[key]);
         }
-        document.title = 'Blogs - Andrew Robilliard';
+        document.title = 'Projects - Andrew Robilliard';
         this.blogs = blogsArray.sort(this.dateCompare);
         this.loaded = true;
       });
