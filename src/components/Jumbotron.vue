@@ -25,13 +25,16 @@ export default {
   background-image: url('https://firebasestorage.googleapis.com/v0/b/andrewrobilliard-website.appspot.com/o/langs-beach.jpg?alt=media&token=50683c87-d7ff-4e95-a500-f86f037f0633');
   background-size: cover;
   background-position: 75% 0;
-  height: calc(100vh - 56px);
+  height: 100vh;
+  top: -56px;
+  margin-bottom: -56px;
   width: auto;
 }
 
 @media only screen and (min-width: 601px) {
   #jumbotron {
-    height: calc(100vh - 64px);
+    top: -64px;
+    margin-bottom: -64px;
   }
 }
 

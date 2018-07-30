@@ -1,12 +1,12 @@
 <template>
-  <div>
+  <div class="navbar-fixed">
     <ul id="accountDropdown" class="dropdown-content">
       <li><router-link v-bind:to="'/AddPost'">Add Post</router-link></li>
       <li><a v-on:click.prevent="logout">Logout</a></li>
     </ul>
-    <nav class="nav-wrapper indigo lighten-1">
+    <nav id="nav-wrapper" class="nav-wrapper">
       <div class="container">
-        <router-link v-bind:to="'/'" v-on:click.native="updateActivePage" class="brand-logo">AndrewR</router-link>
+        <router-link v-bind:to="'/'" v-on:click.native="updateActivePage" class="brand-logo"><span id="logo-text">ARobilliard</span></router-link>
         <a href="#" class="sidenav-trigger" data-target="mobile-links">
           <i class="material-icons">menu</i>
         </a>
@@ -58,7 +58,8 @@
 </template>
 
 <script>
-import firebase from 'firebase';
+import firebase from 'firebase/app';
+import 'firebase/auth';
 export default {
   data() {
     return {
@@ -67,7 +68,9 @@ export default {
         isNewBlog: false,
         count: 0
       },
-      activePage: ''
+      activePage: '',
+      homePageBackground: ['transparent'],
+      generalBackground: ['green', 'darken-4']
     };
   },
   components: {},
@@ -95,6 +98,21 @@ export default {
     },
     updateActivePage() {
       this.activePage = this.getPath();
+      this.updateNavColor();
+    },
+    updateNavColor() {
+      let navBar = $('#nav-wrapper');
+      navBar.removeClass();
+      navBar.addClass('nav-wrapper');
+      if (this.$route.name === 'home') {
+        for (let attr of this.homePageBackground) {
+          navBar.addClass(attr);
+        }
+      } else {
+        for (let attr of this.generalBackground) {
+          navBar.addClass(attr);
+        }
+      }
     }
   },
   created() {
@@ -102,6 +120,7 @@ export default {
     this.refreshUser();
   },
   updated() {
+    this.updateNavColor();
     $('.sidenav').sidenav();
     $('.dropdown-trigger').dropdown({ hover: true, coverTrigger: false });
   }
@@ -112,5 +131,12 @@ export default {
 nav .container ul li a i {
   position: relative;
   top: 5px;
+}
+nav {
+  background-color: white;
+}
+#logo-text {
+  font-family: 'Lobster', 'cursive';
+  font-size: 2.5rem;
 }
 </style>
