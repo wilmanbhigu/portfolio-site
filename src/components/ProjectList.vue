@@ -1,16 +1,17 @@
 <template>
   <div class="container">
     <h3>Projects</h3>
-    <div v-if="blogs.length > 0">
+    <div v-if="projects.length > 0">
       <input type="text" v-model="search" placeholder="Search blogs" />
       <div class="row">
-        <div v-if="loaded" v-for="blog in filteredBlogs" :key="blog.id" class="col s12 m6 l4">
-          <image-card v-bind:card="blog"></image-card>
+        <div v-if="loaded" v-for="project in filteredProjects" :key="project.id" class="col s12 m6 l4">
+          <image-card v-bind:card="project"></image-card>
         </div>
       </div>
     </div>
     <div v-else-if="loaded">
-      <p>No projects found.</p>
+      <!--<p>No projects found.</p>-->
+      <p>Projects coming soon.</p>
     </div>
   </div>
 </template>
@@ -22,7 +23,7 @@ import searchMixin from '../mixins/searchMixin';
 export default {
   data() {
     return {
-      blogs: [],
+      projects: [],
       loaded: false,
       search: ''
     };
@@ -39,18 +40,18 @@ export default {
   },
   created() {
     this.$http
-      .get(`${this.$baseUrl}/posts.json`)
+      .get(`${this.$baseUrl}/projects.json`)
       .then(data => {
         return data.json();
       })
       .then(data => {
-        var blogsArray = [];
+        var projectsArray = [];
         for (let key in data) {
           data[key].id = key;
-          blogsArray.push(data[key]);
+          projectsArray.push(data[key]);
         }
         document.title = 'Projects - Andrew Robilliard';
-        this.blogs = blogsArray.sort(this.dateCompare);
+        this.projects = projectsArray.sort(this.dateCompare);
         this.loaded = true;
       });
   },

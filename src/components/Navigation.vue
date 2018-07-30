@@ -80,12 +80,9 @@ export default {
         .auth()
         .signOut()
         .then(() => {
-          console.log('Firebase signout successful.');
           this.refreshUser();
         })
-        .catch(error => {
-          console.log(error);
-        });
+        .catch(error => {});
     },
     refreshUser() {
       firebase.auth().onAuthStateChanged(user => {
