@@ -1,57 +1,57 @@
 <template>
   <div>
     <ul id="accountDropdown" class="dropdown-content">
-      <li><a href="#">Add Post</a></li>
+      <li><router-link v-bind:to="'/AddPost'">Add Post</router-link></li>
       <li><a v-on:click.prevent="logout">Logout</a></li>
     </ul>
     <nav class="nav-wrapper indigo lighten-1">
       <div class="container">
-        <a href="/" class="brand-logo">AndrewR</a>
+        <router-link v-bind:to="'/'" v-on:click.native="updateActivePage" class="brand-logo">AndrewR</router-link>
         <a href="#" class="sidenav-trigger" data-target="mobile-links">
           <i class="material-icons">menu</i>
         </a>
         <ul class="right hide-on-med-and-down">
           <li v-bind:class="{ active: activePage === 'about'}">
-            <a href="/about"><i class="material-icons left">person_pin</i>About Me</a>
+            <router-link v-bind:to="'/about'" v-on:click.native="updateActivePage"><i class="material-icons left">person_pin</i>About Me</router-link>
           </li>
           <li v-bind:class="{ active: activePage === 'projects'}">
-            <a href="/projects"><i class="material-icons left">developer_board</i>Projects</a>
+            <router-link v-bind:to="'/projects'" v-on:click.native="updateActivePage"><i class="material-icons left">developer_board</i>Projects</router-link>
           </li>
           <li v-bind:class="{ active: activePage === 'blog'}">
-            <a href="/blog"><i class="material-icons left">library_books</i>
+            <router-link v-bind:to="'/blog'" v-on:click.native="updateActivePage"><i class="material-icons left">library_books</i>
               Blog
               <span v-if="blogNotifications.isNewBlog" class="badge blue lighten-4 black-text new">
                 {{blogNotifications.count}}
               </span>
-            </a>
+            </router-link>
           </li>
           <li v-if="!this.signedIn" v-bind:class="{ active: activePage === 'login'}">
-            <a href="/login"><i class="material-icons left">exit_to_app</i>Sign In</a>
+            <router-link v-bind:to="'/login'" v-on:click.native="updateActivePage"><i class="material-icons left">exit_to_app</i>Sign In</router-link>
           </li>
           <li v-else v-bind:class="{ active: activePage === 'account'}">
-            <a href="/account" class="dropdown-trigger" data-target="accountDropdown"><i class="material-icons left">account_circle</i>My Account</a>
+            <router-link v-bind:to="'/account'" v-on:click.native="updateActivePage" class="dropdown-trigger" data-target="accountDropdown"><i class="material-icons left">account_circle</i>My Account</router-link>
           </li>
         </ul>
       </div>
     </nav>
     <ul id="mobile-links" class="sidenav">
       <li v-if="!this.signedIn" v-bind:class="{ active: activePage === 'login'}">
-        <a href="/login"><i class="material-icons right">exit_to_app</i>Sign In</a>
+        <router-link class="sidenav_close" v-bind:to="'/login'" v-on:click.native="updateActivePage"><i class="material-icons right">exit_to_app</i>Sign In</router-link>
       </li>
       <li v-else>
-        <a href="/account"><i class="material-icons right">account_circle</i>My Account</a>
+        <router-link class="sidenav_close" v-bind:to="'/account'" v-on:click.native="updateActivePage"><i class="material-icons right">account_circle</i>My Account</router-link>
       </li>
       <li v-bind:class="{ active: activePage === ''}">
-        <a href="/"><i class="material-icons right">home</i>Home</a>
+        <router-link class="sidenav_close" v-bind:to="'/'" v-on:click.native="updateActivePage"><i class="material-icons right">home</i>Home</router-link>
       </li>
       <li v-bind:class="{ active: activePage === 'about'}">
-        <a href="/about"><i class="material-icons right">person_pin</i>About Me</a>
+        <router-link class="sidenav_close" v-bind:to="'/about'" v-on:click.native="updateActivePage"><i class="material-icons right">person_pin</i>About Me</router-link>
       </li>
       <li v-bind:class="{ active: activePage === 'projects'}">
-        <a href="/projects"><i class="material-icons right">developer_board</i>Projects</a>
+        <router-link class="sidenav_close" v-bind:to="'/projects'" v-on:click.native="updateActivePage"><i class="material-icons right">developer_board</i>Projects</router-link>
       </li>
       <li v-bind:class="{ active: activePage === 'blog'}">
-        <a href="/blog"><i class="material-icons right">library_books</i>Blog</a>
+        <router-link class="sidenav_close" v-bind:to="'/blog'" v-on:click.native="updateActivePage"><i class="material-icons right">library_books</i>Blog</router-link>
       </li>
     </ul>
   </div>
@@ -92,10 +92,13 @@ export default {
     },
     setSignIn(isSignedIn) {
       this.signedIn = isSignedIn;
+    },
+    updateActivePage() {
+      this.activePage = this.getPath();
     }
   },
   created() {
-    this.activePage = this.getPath();
+    this.updateActivePage();
     this.refreshUser();
   },
   updated() {
