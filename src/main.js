@@ -5,8 +5,6 @@ import VueRouter from 'vue-router';
 import Routes from './routes';
 import firebase from 'firebase/app';
 import 'firebase/auth';
-import 'firebase/database';
-import 'firebase/storage';
 import { baseUrl, config } from '../private/firebaseConfig';
 
 Vue.use(VueResource);
