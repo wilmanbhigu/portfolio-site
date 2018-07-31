@@ -45,4 +45,19 @@ export default {
 };
 </script>
 <style>
+/** 
+  Controls styling for <a> tags within html fetched from Firebase
+  Styling must be globally styled rather than scoped
+**/
+#fetched-article a {
+  font-weight: 600;
+}
+#fetched-article a:hover {
+  color: #01579b;
+  -webkit-transition: color 0.2s; /* Safari */
+  transition: color 0.2s;
+}
+/**
+  ---------------------------------------------------------------
+**/
 </style>

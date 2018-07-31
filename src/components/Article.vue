@@ -7,7 +7,7 @@
         </router-link>
       <h3>{{article.title}}</h3>
       <h5>{{article.created}}</h5>
-      <article v-cloak v-html="article.content"></article>
+      <article id="fetched-article" v-cloak v-html="article.content"></article>
     </div>
     <div class="fixed-action-btn">
       <a v-on:click.prevent="scrollToTop" class="waves-effect waves-light btn-floating btn-large orange darken-2 pulse">
@@ -89,15 +89,7 @@ export default {
 };
 </script>
 
-<style>
-a {
-  font-weight: 600;
-}
-a:hover {
-  color: #01579b;
-  -webkit-transition: color 0.2s; /* Safari */
-  transition: color 0.2s;
-}
+<style scoped>
 #back-button:hover {
   color: #ffffff;
 }
