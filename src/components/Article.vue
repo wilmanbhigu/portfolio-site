@@ -1,10 +1,10 @@
 <template>
   <div id="article-wrapper">
     <div v-if="isLoaded" class="container">
-        <a v-if="this.id != null" v-bind:href="this.parent.route" class="btn waves-effect waves-light right">
+        <router-link v-bind:to="this.parent.route" id="back-button" v-if="this.id != null" class="btn waves-effect waves-light right grey darken-2">
           <i class="material-icons left">arrow_back</i>
           Back to {{this.parent.name}}
-        </a>
+        </router-link>
       <h3>{{article.title}}</h3>
       <h5>{{article.created}}</h5>
       <article v-cloak v-html="article.content"></article>
@@ -97,6 +97,9 @@ a:hover {
   color: #01579b;
   -webkit-transition: color 0.2s; /* Safari */
   transition: color 0.2s;
+}
+#back-button:hover {
+  color: #ffffff;
 }
 article {
   padding-bottom: 20px;
