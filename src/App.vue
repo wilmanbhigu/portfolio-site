@@ -9,7 +9,6 @@
     <footer>
       <app-footer v-bind:year="currentYear"></app-footer>
     </footer>
-    
   </div>
 </template>
 
@@ -45,6 +44,5 @@ export default {
   }
 };
 </script>
-
 <style>
 </style>

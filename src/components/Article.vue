@@ -1,12 +1,19 @@
 <template>
-  <div v-if="isLoaded" class="container">
-      <a v-if="this.id != null" v-bind:href="this.parent.route" class="btn waves-effect waves-light right">
-        <i class="material-icons left">arrow_back</i>
-        Back to {{this.parent.name}}
+  <div id="article-wrapper">
+    <div v-if="isLoaded" class="container">
+        <a v-if="this.id != null" v-bind:href="this.parent.route" class="btn waves-effect waves-light right">
+          <i class="material-icons left">arrow_back</i>
+          Back to {{this.parent.name}}
+        </a>
+      <h3>{{article.title}}</h3>
+      <h5>{{article.created}}</h5>
+      <article v-cloak v-html="article.content"></article>
+    </div>
+    <div class="fixed-action-btn">
+      <a v-on:click.prevent="scrollToTop" class="waves-effect waves-light btn-floating btn-large orange darken-2 pulse">
+        <i class="material-icons large">vertical_align_top</i>
       </a>
-    <h3>{{article.title}}</h3>
-    <h5>{{article.created}}</h5>
-    <article v-cloak v-html="article.content"></article>
+    </div>
   </div>
 </template>
 
@@ -59,6 +66,10 @@ export default {
         name: name,
         route: route
       };
+    },
+    scrollToTop() {
+      $('html, body').animate({ scrollTop: 0 }, 'slow');
+      return false;
     }
   },
   props: ['postId'],
@@ -78,5 +89,34 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
+a {
+  font-weight: 600;
+}
+a:hover {
+  color: #01579b;
+  -webkit-transition: color 0.2s; /* Safari */
+  transition: color 0.2s;
+}
+article {
+  padding-bottom: 20px;
+}
+#article-wrapper {
+  position: relative;
+}
+.fixed-action-btn {
+  position: absolute;
+  right: 2.5%;
+  bottom: -28px;
+}
+@media only screen and (min-width: 601px) {
+  .fixed-action-btn {
+    right: 3.75%;
+  }
+}
+@media only screen and (min-width: 993px) {
+  .fixed-action-btn {
+    right: 7.5%;
+  }
+}
 </style>

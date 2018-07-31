@@ -5,9 +5,10 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <link rel="icon" href="./favicon.ico">
+  <link rel="icon" href="">
   <title>Andrew Robilliard</title>
 
+  <link href="https://fonts.googleapis.com/css?family=Lobster|Pacifico|Merriweather" rel="stylesheet">
   <!--Import Google Icon Font-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- Compiled and minified CSS -->
@@ -19,8 +20,21 @@
       flex-direction: column;
     }
 
+    body {
+      overflow-y: scroll;
+      overflow-x: hidden
+    }
+
     main {
       flex: 1 0 auto;
+    }
+
+    body #app-root header {
+      z-index: 2;
+    }
+
+    .sidenav-overlay {
+      z-index: 1;
     }
   </style>
 </head>

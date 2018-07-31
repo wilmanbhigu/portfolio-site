@@ -1,3 +1,4 @@
+import Jumbotron from './components/Jumbotron.vue';
 import AboutMe from './components/AboutMe.vue';
 import ProjectList from './components/ProjectList.vue';
 import BlogList from './components/BlogList.vue';
@@ -5,7 +6,7 @@ import Article from './components/Article.vue';
 import SignIn from './components/SignIn.vue';
 
 export default [
-  { name: 'home', path: '/' },
+  { name: 'home', path: '/', component: Jumbotron },
   { name: 'about', path: '/about', component: AboutMe },
   { name: 'projects', path: '/projects', component: ProjectList },
   { name: 'blog', path: '/blog', component: BlogList },
