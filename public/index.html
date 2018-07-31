@@ -8,7 +8,7 @@
   <link rel="icon" href="">
   <title>Andrew Robilliard</title>
 
-  <link href="https://fonts.googleapis.com/css?family=Lobster|Pacifico" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lobster|Pacifico|Merriweather" rel="stylesheet">
   <!--Import Google Icon Font-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- Compiled and minified CSS -->
@@ -22,10 +22,15 @@
 
     body {
       overflow-y: scroll;
+      overflow-x: hidden
     }
 
     main {
       flex: 1 0 auto;
+    }
+
+    body #app-root header {
+      z-index: 2;
     }
 
     .sidenav-overlay {

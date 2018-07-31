@@ -1,6 +1,6 @@
 <template>
 <!--kill me-->
-  <div class="navbar-fixed">
+  <div style="z-index: 999">
     <ul id="accountDropdown" class="dropdown-content">
       <li><router-link v-bind:to="'/AddPost'">Add Post</router-link></li>
       <li><a v-on:click.prevent="logout">Logout</a></li>
@@ -71,7 +71,7 @@ export default {
       },
       activePage: '',
       homePageBackground: ['transparent'],
-      generalBackground: ['green', 'darken-4']
+      generalBackground: ['orange', 'darken-2']
     };
   },
   components: {},

@@ -1,10 +1,14 @@
 <template>
   <div id="jumbotron">
-    <ul id="links" class="z-depth-2">
-      <li><a href="https://dev.to/alrobilliard" target="_blank">DEV.to</a></li>
-      <li><a href="https://linkedin.com/in/andrew-robilliard/" target="_blank">LinkedIn</a></li>
-      <li><a href="https://github.com/alrobilliard" target="_blank">Github</a></li>
-      <li><a href="https://twitter.com/ALRobilliard" target="_blank">Twitter</a></li>
+    <div id="title">
+      <h2 class="white-text z-index-2">Andrew Robilliard</h2>
+      <h4 class="orange-text text-darken-2">Full Stack Developer</h4>
+    </div>
+    <ul id="links">
+      <li class="z-depth-2"><a href="https://dev.to/alrobilliard" target="_blank">DEV.to</a></li>
+      <li class="z-depth-2"><a href="https://linkedin.com/in/andrew-robilliard/" target="_blank">LinkedIn</a></li>
+      <li class="z-depth-2"><a href="https://github.com/alrobilliard" target="_blank">Github</a></li>
+      <li class="z-depth-2"><a href="https://twitter.com/ALRobilliard" target="_blank">Twitter</a></li>
     </ul>
   </div>
 </template>
@@ -38,9 +42,24 @@ export default {
   }
 }
 
+#title {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  bottom: 50%;
+}
+
+#title h2,
+#title h4 {
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.3), -1px 1px rgba(0, 0, 0, 0.3),
+    1px -1px rgba(0, 0, 0, 0.3), -1px -1px rgba(0, 0, 0, 0.3);
+}
+
+#title h4 {
+  font-family: 'Merriweather', 'serif';
+}
+
 #links {
-  padding: 5px 0;
-  background: rgba(255, 255, 255, 0.1);
   width: 100%;
   text-align: center;
   position: absolute;
@@ -48,16 +67,20 @@ export default {
 }
 #links li {
   display: inline-block;
-  margin-right: 5px;
-  margin-left: 5px;
+  margin: 10px;
+  border: 1px solid #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+}
+#links li:hover {
+  background: rgba(255, 255, 255, 0.3);
+  -webkit-transition: background 0.2s; /* Safari */
+  transition: background 0.2s;
 }
 #links li a {
+  min-width: 90px;
+  display: inline-block;
   color: white;
   font-size: 1.2rem;
-}
-#links li a:hover {
-  color: #cccccc !important;
-  -webkit-transition: color 0.2s; /* Safari */
-  transition: color 0.2s;
+  padding: 10px;
 }
 </style>
