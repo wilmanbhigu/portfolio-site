@@ -45,6 +45,15 @@ export default {
 };
 </script>
 <style>
+main {
+  min-height: calc(100vh - 56px);
+}
+
+@media only screen and (min-width: 601px) {
+  main {
+    min-height: calc(100vh - 64px);
+  }
+}
 /** 
   Controls styling for <a> tags within html fetched from Firebase
   Styling must be globally styled rather than scoped

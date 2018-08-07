@@ -9,7 +9,7 @@
       <h5>{{article.created}}</h5>
       <article id="fetched-article" v-cloak v-html="article.content"></article>
     </div>
-    <div class="fixed-action-btn">
+    <div v-if="isLoaded" class="fixed-action-btn">
       <a v-on:click.prevent="scrollToTop" class="waves-effect waves-light btn-floating btn-large orange darken-2 pulse">
         <i class="material-icons large">vertical_align_top</i>
       </a>

@@ -2,7 +2,7 @@
   <div class="container">
     <h3>Projects</h3>
     <div v-if="projects.length > 0">
-      <input type="text" v-model="search" placeholder="Search blogs" />
+      <input type="text" v-model="search" placeholder="Search projects" />
       <div class="row">
         <div v-if="loaded" v-for="project in filteredProjects" :key="project.id" class="col s12 m6 l4">
           <image-card v-bind:card="project"></image-card>
