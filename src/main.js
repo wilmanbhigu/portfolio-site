@@ -18,8 +18,12 @@ const router = new VueRouter({
 Vue.config.productionTip = false;
 
 Vue.prototype.$baseUrl = baseUrl;
+Vue.prototype.$firebaseUser;
 
 firebase.initializeApp(config);
+firebase.auth().onAuthStateChanged(user => {
+  Vue.$firebaseUser = user;
+});
 
 new Vue({
   render: h => h(App),

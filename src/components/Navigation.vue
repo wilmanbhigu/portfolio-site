@@ -1,11 +1,10 @@
 <template>
-<!--kill me-->
   <div style="z-index: 999">
     <ul id="accountDropdown" class="dropdown-content">
       <li><router-link v-bind:to="'/AddPost'">Add Post</router-link></li>
       <li><a v-on:click.prevent="logout">Logout</a></li>
     </ul>
-    <nav id="nav-wrapper" class="nav-wrapper">
+    <nav id="nav-wrapper" class="nav-wrapper orange darken-2">
       <div class="container">
         <router-link v-bind:to="'/'" v-on:click.native="updateActivePage" class="brand-logo"><span id="logo-text">AndrewR</span></router-link>
         <a href="#" class="sidenav-trigger" data-target="mobile-links">
@@ -26,8 +25,8 @@
               </span>
             </router-link>
           </li>
-          <li v-if="!this.signedIn" v-bind:class="{ active: activePage === 'login'}">
-            <router-link v-bind:to="'/login'" v-on:click.native="updateActivePage"><i class="material-icons left">exit_to_app</i>Sign In</router-link>
+          <li v-if="isAuthenticated()" v-bind:class="{ active: activePage === 'login'}">
+            <router-link v-bind:to="'/login'" v-on:click.native="updateActivePage"><i class="material-icons left">lock_open</i>Sign In</router-link>
           </li>
           <li v-else v-bind:class="{ active: activePage === 'account'}">
             <router-link v-bind:to="'/account'" v-on:click.native="updateActivePage" class="dropdown-trigger" data-target="accountDropdown"><i class="material-icons left">account_circle</i>My Account</router-link>
@@ -48,8 +47,8 @@
       <li v-bind:class="{ active: activePage === 'blog'}">
         <router-link class="sidenav_close" v-bind:to="'/blog'" v-on:click.native="updateActivePage"><i class="material-icons right">library_books</i>Blog</router-link>
       </li>
-      <li v-if="!this.signedIn" v-bind:class="{ active: activePage === 'login'}">
-        <router-link class="sidenav_close" v-bind:to="'/login'" v-on:click.native="updateActivePage"><i class="material-icons right">exit_to_app</i>Sign In</router-link>
+      <li v-if="isAuthenticated()" v-bind:class="{ active: activePage === 'login'}">
+        <router-link class="sidenav_close" v-bind:to="'/login'" v-on:click.native="updateActivePage"><i class="material-icons right">lock_open</i>Sign In</router-link>
       </li>
       <li v-else>
         <router-link class="sidenav_close" v-bind:to="'/account'" v-on:click.native="updateActivePage"><i class="material-icons right">account_circle</i>My Account</router-link>
@@ -64,7 +63,6 @@ import 'firebase/auth';
 export default {
   data() {
     return {
-      signedIn: null,
       blogNotifications: {
         isNewBlog: false,
         count: 0
@@ -80,25 +78,11 @@ export default {
       return this.$route.path.slice(1);
     },
     logout() {
-      firebase
-        .auth()
-        .signOut()
-        .then(() => {
-          this.refreshUser();
-        })
-        .catch(error => {});
-    },
-    refreshUser() {
-      firebase.auth().onAuthStateChanged(user => {
-        if (user) this.setSignIn(true);
-        else this.setSignIn(false);
-      });
-    },
-    setSignIn(isSignedIn) {
-      this.signedIn = isSignedIn;
+      firebase.auth().signOut();
     },
     updateActivePage() {
       this.activePage = this.getPath();
+      console.log(this.activePage);
       this.updateNavColor();
     },
     updateNavColor() {
@@ -114,11 +98,13 @@ export default {
           navBar.addClass(attr);
         }
       }
+    },
+    isAuthenticated() {
+      return this.$firebaseUser != null;
     }
   },
-  created() {
+  beforeMount() {
     this.updateActivePage();
-    this.refreshUser();
   },
   updated() {
     this.updateNavColor();
@@ -132,9 +118,6 @@ export default {
 nav .container ul li a i {
   position: relative;
   top: 5px;
-}
-nav {
-  background-color: white;
 }
 #logo-text {
   font-family: 'Lobster', 'cursive';

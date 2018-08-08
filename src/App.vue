@@ -3,7 +3,7 @@
     <header>
       <app-navigation></app-navigation>
     </header>
-    <main>
+    <main class="grey lighten-3">
       <router-view></router-view>
     </main>
     <footer>
@@ -18,6 +18,7 @@ import BlogList from './components/BlogList.vue';
 import ProjectList from './components/ProjectList.vue';
 import Footer from './components/Footer.vue';
 import SignIn from './components/SignIn.vue';
+import WritePost from './components/WritePost.vue';
 
 export default {
   name: 'app',
@@ -31,7 +32,8 @@ export default {
     'blog-list': BlogList,
     'project-list': ProjectList,
     'app-footer': Footer,
-    'sign-in': SignIn
+    'sign-in': SignIn,
+    'write-post': WritePost
   },
   methods: {
     getCurrentYear() {
@@ -45,6 +47,9 @@ export default {
 };
 </script>
 <style>
+body {
+  overflow-x: hidden;
+}
 main {
   min-height: calc(100vh - 56px);
 }

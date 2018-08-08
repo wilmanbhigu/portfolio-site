@@ -1,13 +1,13 @@
 <template>
   <div id="article-wrapper">
-    <div v-if="isLoaded" class="container">
+    <div v-if="isLoaded" class="container white z-depth-2" id="article-container">
         <router-link v-bind:to="this.parent.route" id="back-button" v-if="this.id != null" class="btn waves-effect waves-light right grey darken-2">
           <i class="material-icons left">arrow_back</i>
           Back to {{this.parent.name}}
         </router-link>
-      <h3>{{article.title}}</h3>
-      <h5>{{article.created}}</h5>
-      <article id="fetched-article" v-cloak v-html="article.content"></article>
+        <h3>{{article.title}}</h3>
+        <h5>{{article.created}}</h5>
+        <article id="fetched-article" v-cloak v-html="article.content"></article>
     </div>
     <div v-if="isLoaded" class="fixed-action-btn">
       <a v-on:click.prevent="scrollToTop" class="waves-effect waves-light btn-floating btn-large orange darken-2 pulse">
@@ -90,6 +90,12 @@ export default {
 </script>
 
 <style scoped>
+#article-container {
+  margin-top: 1.5rem;
+  margin-bottom: 3rem;
+  padding: 1.5rem;
+}
+
 #back-button:hover {
   color: #ffffff;
 }
@@ -102,7 +108,7 @@ article {
 .fixed-action-btn {
   position: absolute;
   right: 2.5%;
-  bottom: -28px;
+  bottom: -72px;
 }
 @media only screen and (min-width: 601px) {
   .fixed-action-btn {
