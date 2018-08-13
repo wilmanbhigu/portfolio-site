@@ -1,10 +1,10 @@
 <template>
   <div id="article-wrapper">
     <div v-if="isLoaded" class="container white z-depth-2" id="article-container">
-        <router-link v-bind:to="this.parent.route" id="back-button" v-if="this.id != null" class="btn waves-effect waves-light right grey darken-2">
-          <i class="material-icons left">arrow_back</i>
-          Back to {{this.parent.name}}
-        </router-link>
+        <div class="col s12" v-if="this.id != null">
+          <router-link v-bind:to="this.parent.route" class="breadcrumb">{{this.parent.name}}</router-link>
+          <router-link v-bind:to="this.$route.path" class="breadcrumb">{{this.article.title}}</router-link>
+        </div>
         <h3>{{article.title}}</h3>
         <h5>{{article.created}}</h5>
         <article id="fetched-article" v-cloak v-html="article.content"></article>
@@ -119,5 +119,17 @@ article {
   .fixed-action-btn {
     right: 7.5%;
   }
+}
+a.breadcrumb {
+  color: #039be5;
+}
+a.breadcrumb::before {
+  color: unset;
+  margin-top: -3px;
+}
+a.breadcrumb:hover {
+  color: #01579b;
+  -webkit-transition: color 0.2s; /* Safari */
+  transition: color 0.2s;
 }
 </style>

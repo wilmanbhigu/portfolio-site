@@ -3,7 +3,7 @@
     <header>
       <app-navigation></app-navigation>
     </header>
-    <main class="grey lighten-3">
+    <main class="grey lighten-4">
       <router-view></router-view>
     </main>
     <footer>
