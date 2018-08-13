@@ -1,10 +1,6 @@
 <template>
   <div style="z-index: 999">
-    <ul id="accountDropdown" class="dropdown-content">
-      <li><router-link v-bind:to="'/AddPost'">Add Post</router-link></li>
-      <li><a v-on:click.prevent="logout">Logout</a></li>
-    </ul>
-    <nav id="nav-wrapper" class="nav-wrapper orange darken-2">
+    <nav id="nav-wrapper" class="nav-wrapper" v-bind:class="{transparent: isTransparent, orange: !isTransparent, 'darken-2': !isTransparent}">
       <div class="container">
         <router-link v-bind:to="'/'" v-on:click.native="updateActivePage" class="brand-logo"><span id="logo-text">AndrewR</span></router-link>
         <a href="#" class="sidenav-trigger" data-target="mobile-links">
@@ -25,12 +21,6 @@
               </span>
             </router-link>
           </li>
-          <li v-if="isAuthenticated()" v-bind:class="{ active: activePage === 'login'}">
-            <router-link v-bind:to="'/login'" v-on:click.native="updateActivePage"><i class="material-icons left">lock_open</i>Sign In</router-link>
-          </li>
-          <li v-else v-bind:class="{ active: activePage === 'account'}">
-            <router-link v-bind:to="'/account'" v-on:click.native="updateActivePage" class="dropdown-trigger" data-target="accountDropdown"><i class="material-icons left">account_circle</i>My Account</router-link>
-          </li>
         </ul>
       </div>
     </nav>
@@ -47,19 +37,11 @@
       <li v-bind:class="{ active: activePage === 'blog'}">
         <router-link class="sidenav_close" v-bind:to="'/blog'" v-on:click.native="updateActivePage"><i class="material-icons right">library_books</i>Blog</router-link>
       </li>
-      <li v-if="isAuthenticated()" v-bind:class="{ active: activePage === 'login'}">
-        <router-link class="sidenav_close" v-bind:to="'/login'" v-on:click.native="updateActivePage"><i class="material-icons right">lock_open</i>Sign In</router-link>
-      </li>
-      <li v-else>
-        <router-link class="sidenav_close" v-bind:to="'/account'" v-on:click.native="updateActivePage"><i class="material-icons right">account_circle</i>My Account</router-link>
-      </li>
     </ul>
   </div>
 </template>
 
 <script>
-import firebase from 'firebase/app';
-import 'firebase/auth';
 export default {
   data() {
     return {
@@ -68,6 +50,7 @@ export default {
         count: 0
       },
       activePage: '',
+      isTransparent: null,
       homePageBackground: ['transparent'],
       generalBackground: ['orange', 'darken-2']
     };
@@ -77,37 +60,15 @@ export default {
     getPath() {
       return this.$route.path.slice(1);
     },
-    logout() {
-      firebase.auth().signOut();
-    },
     updateActivePage() {
       this.activePage = this.getPath();
-      console.log(this.activePage);
-      this.updateNavColor();
-    },
-    updateNavColor() {
-      let navBar = $('#nav-wrapper');
-      navBar.removeClass();
-      navBar.addClass('nav-wrapper');
-      if (this.$route.name === 'home') {
-        for (let attr of this.homePageBackground) {
-          navBar.addClass(attr);
-        }
-      } else {
-        for (let attr of this.generalBackground) {
-          navBar.addClass(attr);
-        }
-      }
-    },
-    isAuthenticated() {
-      return this.$firebaseUser != null;
+      this.isTransparent = this.getPath() === '';
     }
   },
   beforeMount() {
     this.updateActivePage();
   },
   updated() {
-    this.updateNavColor();
     $('.sidenav').sidenav();
     $('.dropdown-trigger').dropdown({ hover: true, coverTrigger: false });
   }

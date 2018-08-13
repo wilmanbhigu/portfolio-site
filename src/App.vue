@@ -17,8 +17,6 @@ import Navigation from './components/Navigation.vue';
 import BlogList from './components/BlogList.vue';
 import ProjectList from './components/ProjectList.vue';
 import Footer from './components/Footer.vue';
-import SignIn from './components/SignIn.vue';
-import WritePost from './components/WritePost.vue';
 
 export default {
   name: 'app',
@@ -31,9 +29,7 @@ export default {
     'app-navigation': Navigation,
     'blog-list': BlogList,
     'project-list': ProjectList,
-    'app-footer': Footer,
-    'sign-in': SignIn,
-    'write-post': WritePost
+    'app-footer': Footer
   },
   methods: {
     getCurrentYear() {
