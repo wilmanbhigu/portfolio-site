@@ -1,6 +1,6 @@
 # My Portfolio Site
 
-![andrewrobilliard.com](docs/images/andrewrobilliard.png)
+![andrewrobilliard.com](docs/images/andrewrobilliard.PNG)
 
 ## Purpose
 
