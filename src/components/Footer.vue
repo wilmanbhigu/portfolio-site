@@ -1,5 +1,5 @@
 <template>
-  <footer class="page-footer grey darken-3">
+  <footer class="page-footer blue darken-4">
     <div class="container">
       <div class="row">
         <div class="col s12 l6">
@@ -10,7 +10,8 @@
              <a href="https://www.intergen.co.nz" target="_blank" class="orange-text text-darken-2">@Intergen</a>
           </p>
         </div>
-        <div class="col s12 l4 offset-l2">
+        <div class="row">
+<div class="col s12 l4 offset-l2">
           <h5 class="white-text">Links</h5>
           <ul>
             <li>
@@ -27,11 +28,12 @@
             </li>
           </ul>
         </div>
+        </div>
       </div>
     </div>
-    <div class="footer-copyright grey darken-2">
+    <div class="footer-copyright blue darken-3">
       <div class="container">
-        © 2017 - {{year}} Andrew Robilliard
+        © {{year}} Andrew Robilliard 🍁🥝
       </div>
     </div>
   </footer>

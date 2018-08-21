@@ -1,0 +1,120 @@
+<template>
+  <div class="container">
+    <div class="row">
+      <div class="col s12">
+        <h1 class="grey-text text-darken-3">Andrew</h1>
+        <h1 class="grey-text text-darken-3">Robilliard</h1>
+        <h4 class="orange-text text-darken-2">// Full Stack Developer</h4>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="row">
+      <div class="col s12 m8 offset-m2">
+        <h5 class="center grey-text text-darken-3">I like writing code.</h5>
+        <h6 class="center grey-text text-darken-3">JAVASCRIPT / VUE | C# / .NET FRAMEWORK | DYNAMICS 365 | GIT</h6>
+      </div>
+    </div>
+    <div class="row">
+      <p class="grey-text text-darken-3">
+        Currently working as a Dynamics 365 at 
+        <a class="orange-text text-darken-2" href="https://www.intergen.co.nz/" target="_blank">Intergen</a>.
+        Before that I was a student at the 
+        <a class="orange-text text-darken-2" href="https://www.auckland.ac.nz/" target="_blank">University of Auckland</a>,
+        where I graduated with a Bachelor of Science in Computer Science and Information Systems.
+      </p>
+    </div>
+    <div class="row center">
+      <div class="col s3 m2 offset-m2">
+        <a href="https://dev.to/alrobilliard" target="_blank" class="waves-effect waves-light btn-large btn-floating fa fa-devto">
+            <img src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg" alt="Andrew Robilliard's DEV Profile" />
+        </a>
+      </div>
+      <div class="col s3 m2">
+        <a href="https://linkedin.com/in/andrew-robilliard/" target="_blank" class="waves-effect waves-light btn-large btn-floating fa fa-linkedin"></a>
+      </div>
+      <div class="col s3 m2">
+        <a href="https://github.com/alrobilliard" target="_blank" class="waves-effect waves-light btn-large btn-floating fa fa-github"></a>
+      </div>
+      <div class="col s3 m2">
+        <a href="https://twitter.com/alrobilliard" target="_blank" class="waves-effect waves-light btn-large btn-floating fa fa-twitter"></a>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {};
+  },
+  components: {},
+  methods: {}
+};
+</script>
+
+<style scoped>
+h1 {
+  font-family: 'Lobster', 'cursive';
+}
+
+h4,
+h5,
+h6,
+p {
+  font-family: 'Source Sans Pro', 'sans-serif';
+}
+
+h1 {
+  margin-bottom: 0;
+}
+h1:last-of-type {
+  margin-top: 0;
+}
+
+h4:last-of-type {
+  margin-top: 0.5rem;
+}
+
+.fa {
+  font-size: 2rem;
+  font-weight: normal;
+  margin: 0 0.5rem;
+}
+
+.fa:hover {
+  opacity: 0.8;
+  -webkit-transition: opacity 0.2s; /* Safari */
+  transition: opacity 0.2s;
+  color: white;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.fa-github {
+  background: #24292e;
+  color: white;
+}
+.fa-twitter {
+  background: #55acee;
+  color: white;
+}
+.fa-devto {
+  background-color: white;
+}
+.fa-devto img {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
+a {
+  font-weight: 500;
+}
+a:hover {
+  color: #ffa726;
+  -webkit-transition: color 0.2s; /* Safari */
+  transition: color 0.2s;
+}
+</style>

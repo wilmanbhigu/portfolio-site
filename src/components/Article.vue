@@ -1,6 +1,6 @@
 <template>
   <div id="article-wrapper">
-    <div v-if="isLoaded" class="container white z-depth-2" id="article-container">
+    <div v-if="isLoaded" class="container white" id="article-container">
         <div class="col s12" v-if="this.id != null">
           <router-link v-bind:to="this.parent.route" class="breadcrumb">{{this.parent.name}}</router-link>
           <router-link v-bind:to="this.$route.path" class="breadcrumb">{{this.article.title}}</router-link>
@@ -91,7 +91,6 @@ export default {
 
 <style scoped>
 #article-container {
-  margin-top: 1.5rem;
   margin-bottom: 3rem;
   padding: 1.5rem;
 }
