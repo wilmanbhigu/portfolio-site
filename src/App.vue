@@ -52,12 +52,12 @@ export default {
 }
 
 main {
-  min-height: calc(100vh - 76px);
+  min-height: calc(100vh - 86px);
 }
 
 @media only screen and (min-width: 601px) {
   main {
-    min-height: calc(100vh - 84px);
+    min-height: calc(100vh - 94px);
   }
 }
 
