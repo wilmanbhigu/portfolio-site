@@ -1,22 +1,20 @@
 <template>
-  <div>
-    <nav id="nav-wrapper" class="nav-wrapper transparent">
+  <div class="navbar-fixed">
+    <nav id="nav-wrapper" class="nav-wrapper blue-grey darken-4">
       <div class="container">
-        <a class="sidenav-trigger grey-text text-darken-3" data-target="mobile-links">
+        <a class="sidenav-trigger" data-target="mobile-links">
           <i class="material-icons">menu</i>
         </a>
+        <router-link class="brand-logo" v-bind:to="'/'" v-on:click.native="updateActivePage">{ test }</router-link>
         <ul class="right hide-on-med-and-down">
-          <li v-bind:class="{ active: activePage === ''}">
-            <router-link class="grey-text text-darken-3" v-bind:to="'/'" v-on:click.native="updateActivePage"><i class="material-icons left">home</i>Home</router-link>
-          </li>
           <li v-bind:class="{ active: activePage === 'about'}">
-            <router-link class="grey-text text-darken-3" v-bind:to="'/about'" v-on:click.native="updateActivePage"><i class="material-icons left">assignment_ind</i>About Me</router-link>
+            <router-link v-bind:to="'/about'" v-on:click.native="updateActivePage"><i class="material-icons left">assignment_ind</i>About Me</router-link>
           </li>
           <li v-bind:class="{ active: activePage === 'projects'}">
-            <router-link class="grey-text text-darken-3" v-bind:to="'/projects'" v-on:click.native="updateActivePage"><i class="material-icons left">developer_board</i>Projects</router-link>
+            <router-link v-bind:to="'/projects'" v-on:click.native="updateActivePage"><i class="material-icons left">developer_board</i>Projects</router-link>
           </li>
           <li v-bind:class="{ active: activePage === 'blog'}">
-            <router-link class="grey-text text-darken-3" v-bind:to="'/blog'" v-on:click.native="updateActivePage"><i class="material-icons left">library_books</i>
+            <router-link v-bind:to="'/blog'" v-on:click.native="updateActivePage"><i class="material-icons left">library_books</i>
               Blog
               <span v-if="blogNotifications.isNewBlog" class="badge blue lighten-4 black-text new">
                 {{blogNotifications.count}}
@@ -60,7 +58,13 @@ export default {
       return this.$route.path.slice(1);
     },
     updateActivePage() {
+      this.scrollToTop();
       this.activePage = this.getPath();
+    },
+    scrollToTop() {
+      setTimeout(() => {
+        $(window).scrollTop(0);
+      }, 300);
     }
   },
   beforeMount() {
@@ -76,16 +80,12 @@ export default {
 </script>
 
 <style scoped>
-.nav-wrapper {
-  box-shadow: none;
-}
 nav .container ul li a i {
   position: relative;
   top: 5px;
 }
-#logo-text {
+.brand-logo {
   font-family: 'Lobster', 'cursive';
-  font-size: 2.5rem;
 }
 
 ul li::after {
@@ -93,8 +93,13 @@ ul li::after {
   display: block;
   width: 0;
   height: 2px;
-  background: #424242;
+  background: #f57c00;
   transition: width 0.3s;
+  margin-top: -15px;
+}
+
+#mobile-links li::after {
+  margin-top: 0;
 }
 
 ul li:hover::after {

@@ -1,5 +1,5 @@
 <template>
-  <footer class="page-footer blue darken-4">
+  <footer class="page-footer blue-grey darken-4">
     <div class="container">
       <div class="row">
         <div class="col s12 l6">
@@ -31,7 +31,7 @@
         </div>
       </div>
     </div>
-    <div class="footer-copyright blue darken-3">
+    <div class="footer-copyright blue-grey darken-3">
       <div class="container">
         © {{year}} Andrew Robilliard 🍁🥝
       </div>
