@@ -5,7 +5,7 @@
         <a class="sidenav-trigger" data-target="mobile-links">
           <i class="material-icons">menu</i>
         </a>
-        <router-link class="brand-logo" v-bind:to="'/'" v-on:click.native="updateActivePage">{ test }</router-link>
+        <router-link class="brand-logo" v-bind:to="'/'" v-on:click.native="updateActivePage">{ AndrewR }</router-link>
         <ul class="right hide-on-med-and-down">
           <li v-bind:class="{ active: activePage === 'about'}">
             <router-link v-bind:to="'/about'" v-on:click.native="updateActivePage"><i class="material-icons left">assignment_ind</i>About Me</router-link>

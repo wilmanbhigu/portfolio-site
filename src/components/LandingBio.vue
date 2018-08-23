@@ -11,17 +11,19 @@
     <div class="row">
       <div class="col s12 m8 offset-m2">
         <h5 class="center grey-text text-darken-3">I like writing code.</h5>
-        <h6 class="center grey-text text-darken-3">JAVASCRIPT / VUE | C# / .NET FRAMEWORK | DYNAMICS 365 | GIT</h6>
+        <h6 class="center grey-text text-darken-3">JAVASCRIPT / TYPESCRIPT / VUE | C# / .NET FRAMEWORK | DYNAMICS 365 | Azure</h6>
       </div>
     </div>
     <div class="row">
       <p class="grey-text text-darken-3">
-        Currently working as a Dynamics 365 at 
+        Currently working as a Dynamics 365 Developer at 
         <a class="orange-text text-darken-2" href="https://www.intergen.co.nz/" target="_blank">Intergen</a>.
         Before that I was a student at the 
         <a class="orange-text text-darken-2" href="https://www.auckland.ac.nz/" target="_blank">University of Auckland</a>,
-        where I graduated with a Bachelor of Science in Computer Science and Information Systems.
+        where I graduated with a Bachelor of Science in Computer Science and Information Systems. While I already have experience with a number
+        of technologies and frameworks, the tinkering never ends.
       </p>
+      <p>Feel free to contact me on social media, or check out my blog posts here or on Dev.to - <i>once I start writing them of course</i> ✍</p>
     </div>
     <div class="row center">
       <div class="col s3 m2 offset-m2">

@@ -4,10 +4,10 @@
       <div class="row">
         <div class="col s12 l6">
           <h5 class="white-text">Who am I?</h5>
-          <p class="grey-text text-lighten-4">Just a Software Dev living the Dev life // CompSci &amp; InfoSys graduate 
+          <p class="grey-text text-lighten-4">Just a Software Dev living the Dev life // Dynamics CRM Developer 
+            <a href="https://www.intergen.co.nz" target="_blank" class="orange-text text-darken-2">@Intergen</a>
+            // CompSci &amp; InfoSys graduate 
             <a href="https://www.auckland.ac.nz/" target="_blank" class="orange-text text-darken-2">@AucklandUni</a>
-             // Dynamics CRM Developer at 
-             <a href="https://www.intergen.co.nz" target="_blank" class="orange-text text-darken-2">@Intergen</a>
           </p>
         </div>
         <div class="row">
