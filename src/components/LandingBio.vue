@@ -27,18 +27,18 @@
     </div>
     <div class="row center">
       <div class="col s3 m2 offset-m2">
-        <a href="https://dev.to/alrobilliard" target="_blank" class="waves-effect waves-light btn-large btn-floating fa fa-devto">
+        <a href="https://dev.to/alrobilliard" target="_blank" title="Dev.to Profile - ALRobilliard" rel="noopener" class="waves-effect waves-light btn-large btn-floating fa fa-devto">
             <img src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg" alt="Andrew Robilliard's DEV Profile" />
         </a>
       </div>
       <div class="col s3 m2">
-        <a href="https://linkedin.com/in/andrew-robilliard/" target="_blank" class="waves-effect waves-light btn-large btn-floating fa fa-linkedin"></a>
+        <a href="https://linkedin.com/in/andrew-robilliard/" title="LinkedIn Profile - andrew-robilliard" target="_blank" rel="noopener" class="waves-effect waves-light btn-large btn-floating fa fa-linkedin"></a>
       </div>
       <div class="col s3 m2">
-        <a href="https://github.com/alrobilliard" target="_blank" class="waves-effect waves-light btn-large btn-floating fa fa-github"></a>
+        <a href="https://github.com/alrobilliard" target="_blank" title="Github Profile - ALRobilliard" rel="noopener" class="waves-effect waves-light btn-large btn-floating fa fa-github"></a>
       </div>
       <div class="col s3 m2">
-        <a href="https://twitter.com/alrobilliard" target="_blank" class="waves-effect waves-light btn-large btn-floating fa fa-twitter"></a>
+        <a href="https://twitter.com/alrobilliard" target="_blank" title="Twitter Profile - ALRobilliard" rel="noopener" class="waves-effect waves-light btn-large btn-floating fa fa-twitter"></a>
       </div>
     </div>
   </div>

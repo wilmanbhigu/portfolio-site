@@ -15,16 +15,16 @@
           <h5 class="white-text">Links</h5>
           <ul>
             <li>
-              <a href="https://dev.to/alrobilliard" target="_blank" class="grey-text text-lighten-3">DEV.to</a>
+              <a href="https://dev.to/alrobilliard" target="_blank" rel="noopener" class="grey-text text-lighten-3">DEV.to</a>
             </li>
             <li>
-              <a href="https://linkedin.com/in/andrew-robilliard/" target="_blank" class="grey-text text-lighten-3">LinkedIn</a>
+              <a href="https://linkedin.com/in/andrew-robilliard/" target="_blank" rel="noopener" class="grey-text text-lighten-3">LinkedIn</a>
             </li>
             <li>
-              <a href="https://github.com/alrobilliard" target="_blank" class="grey-text text-lighten-3">GitHub</a>
+              <a href="https://github.com/alrobilliard" target="_blank" rel="noopener" class="grey-text text-lighten-3">GitHub</a>
             </li>
             <li>
-              <a href="https://twitter.com/ALRobilliard" target="_blank" class="grey-text text-lighten-3">Twitter</a>
+              <a href="https://twitter.com/ALRobilliard" target="_blank" rel="noopener" class="grey-text text-lighten-3">Twitter</a>
             </li>
           </ul>
         </div>
