@@ -90,7 +90,8 @@ h4:last-of-type {
   opacity: 0.8;
   -webkit-transition: opacity 0.2s; /* Safari */
   transition: opacity 0.2s;
-  color: white;
+  color: white !important;
+  text-decoration: none;
 }
 
 .fa-linkedin {
