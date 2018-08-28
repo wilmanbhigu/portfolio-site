@@ -79,9 +79,11 @@ main {
 **/
 #fetched-article a {
   font-weight: 600;
+  color: #f57c00;
 }
 #fetched-article a:hover {
-  color: #01579b;
+  color: #ffa726;
+  text-decoration: underline;
   -webkit-transition: color 0.2s; /* Safari */
   transition: color 0.2s;
 }

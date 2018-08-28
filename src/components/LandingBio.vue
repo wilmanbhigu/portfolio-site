@@ -50,7 +50,10 @@ export default {
     return {};
   },
   components: {},
-  methods: {}
+  methods: {},
+  created() {
+    document.title = 'AndrewR';
+  }
 };
 </script>
 
@@ -112,10 +115,11 @@ h4:last-of-type {
   border-radius: 50%;
 }
 a {
-  font-weight: 500;
+  font-weight: 600;
 }
 a:hover {
-  color: #ffa726;
+  color: #ffa726 !important;
+  text-decoration: underline;
   -webkit-transition: color 0.2s; /* Safari */
   transition: color 0.2s;
 }

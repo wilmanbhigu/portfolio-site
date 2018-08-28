@@ -84,6 +84,9 @@ export default {
         this.article.created = this.createDate(data.created);
         this.parent = this.getParent();
         this.isLoaded = true;
+      })
+      .then(() => {
+        document.title = `AndrewR - ${this.article.title}`;
       });
   }
 };

@@ -49,7 +49,7 @@ export default {
           data[key].id = key;
           blogsArray.push(data[key]);
         }
-        document.title = 'Blog - Andrew Robilliard';
+        document.title = 'AndrewR - Blog';
         this.blogs = blogsArray.sort(this.dateCompare);
         this.loaded = true;
       });

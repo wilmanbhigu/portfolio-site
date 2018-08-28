@@ -12,9 +12,6 @@ export default {
   methods: {},
   components: {
     'app-article': Article
-  },
-  created() {
-    document.title = 'Projects - Andrew Robilliard';
   }
 };
 </script>
