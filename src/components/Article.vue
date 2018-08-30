@@ -86,7 +86,7 @@ export default {
         this.isLoaded = true;
       })
       .then(() => {
-        document.title = `AndrewR - ${this.article.title}`;
+        document.title = `Andrew Robilliard - ${this.article.title}`;
       });
   }
 };

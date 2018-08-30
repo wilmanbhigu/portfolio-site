@@ -52,7 +52,7 @@ export default {
   components: {},
   methods: {},
   created() {
-    document.title = 'AndrewR';
+    document.title = 'Andrew Robilliard';
   }
 };
 </script>

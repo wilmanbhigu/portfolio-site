@@ -33,7 +33,7 @@
     </div>
     <div class="footer-copyright blue-grey darken-3">
       <div class="container">
-        © {{year}} Andrew Robilliard 🍁🥝
+        © 2017 - {{year}} Andrew Robilliard 🍁🥝
       </div>
     </div>
   </footer>

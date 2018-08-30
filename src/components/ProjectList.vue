@@ -50,7 +50,7 @@ export default {
           data[key].id = key;
           projectsArray.push(data[key]);
         }
-        document.title = 'AndrewR - Projects';
+        document.title = 'Andrew Robilliard - Projects';
         this.projects = projectsArray.sort(this.dateCompare);
         this.loaded = true;
       });
