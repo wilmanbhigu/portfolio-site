@@ -27,18 +27,24 @@
     </div>
     <div class="row center">
       <div class="col s3 m2 offset-m2">
-        <a href="https://dev.to/alrobilliard" target="_blank" title="Dev.to Profile - ALRobilliard" rel="noopener" class="waves-effect waves-light btn-large btn-floating fa fa-devto">
-            <img src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg" alt="Andrew Robilliard's DEV Profile" />
+        <a href="https://dev.to/alrobilliard" target="_blank" title="Dev.to Profile - ALRobilliard" rel="noopener" class="waves-effect waves-light btn-large btn-floating icon-link">
+          <i class="fab fa-dev"></i>
         </a>
       </div>
       <div class="col s3 m2">
-        <a href="https://linkedin.com/in/andrew-robilliard/" title="LinkedIn Profile - andrew-robilliard" target="_blank" rel="noopener" class="waves-effect waves-light btn-large btn-floating fa fa-linkedin"></a>
+        <a href="https://linkedin.com/in/andrew-robilliard/" title="LinkedIn Profile - andrew-robilliard" target="_blank" rel="noopener" class="waves-effect waves-light btn-large btn-floating icon-link">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
       </div>
       <div class="col s3 m2">
-        <a href="https://github.com/alrobilliard" target="_blank" title="Github Profile - ALRobilliard" rel="noopener" class="waves-effect waves-light btn-large btn-floating fa fa-github"></a>
+        <a href="https://github.com/alrobilliard" target="_blank" title="Github Profile - ALRobilliard" rel="noopener" class="waves-effect waves-light btn-large btn-floating icon-link">
+          <i class="fab fa-github"></i>
+        </a>
       </div>
       <div class="col s3 m2">
-        <a href="https://twitter.com/alrobilliard" target="_blank" title="Twitter Profile - ALRobilliard" rel="noopener" class="waves-effect waves-light btn-large btn-floating fa fa-twitter"></a>
+        <a href="https://twitter.com/alrobilliard" target="_blank" title="Twitter Profile - ALRobilliard" rel="noopener" class="waves-effect waves-light btn-large btn-floating icon-link">
+          <i class="fab fa-twitter"></i>
+        </a>
       </div>
     </div>
   </div>
@@ -80,13 +86,14 @@ h4:last-of-type {
   margin-top: 0.5rem;
 }
 
-.fa {
+.icon-link i {
   font-size: 2rem;
-  font-weight: normal;
-  margin: 0 0.5rem;
+}
+.icon-link i.fa-dev {
+  font-size: 2.5rem;
 }
 
-.fa:hover {
+.icon-link:hover {
   opacity: 0.8;
   -webkit-transition: opacity 0.2s; /* Safari */
   transition: opacity 0.2s;
@@ -94,7 +101,7 @@ h4:last-of-type {
   text-decoration: none;
 }
 
-.fa-linkedin {
+.fa-linkedin-in {
   background: #007bb5;
   color: white;
 }
@@ -107,13 +114,9 @@ h4:last-of-type {
   background: #55acee;
   color: white;
 }
-.fa-devto {
+.fa-dev {
   background-color: white;
-}
-.fa-devto img {
-  height: 100%;
-  width: 100%;
-  border-radius: 50%;
+  color: black;
 }
 a {
   font-weight: 600;
