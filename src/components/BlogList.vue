@@ -47,7 +47,9 @@ export default {
         var blogsArray = [];
         for (let key in data) {
           data[key].id = key;
-          blogsArray.push(data[key]);
+          if (data[key].published) {
+            blogsArray.push(data[key]);
+          }
         }
         document.title = 'Andrew Robilliard - Blog';
         this.blogs = blogsArray.sort(this.dateCompare);
