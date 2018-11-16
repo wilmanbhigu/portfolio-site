@@ -4,14 +4,14 @@
       <div class="row">
         <div class="col s12 l6">
           <h5 class="white-text">Who am I?</h5>
-          <p class="grey-text text-lighten-4">Just a Software Dev living the Dev life // Dynamics CRM Developer 
+          <p class="grey-text text-lighten-4">Just a Software Dev living the Dev life // Dynamics 365 Developer 
             <a href="https://www.intergen.co.nz" target="_blank" class="orange-text text-darken-2">@Intergen</a>
             // CompSci &amp; InfoSys graduate 
             <a href="https://www.auckland.ac.nz/" target="_blank" class="orange-text text-darken-2">@AucklandUni</a>
           </p>
         </div>
         <div class="row">
-<div class="col s12 l4 offset-l2">
+        <div class="col s12 l4 offset-l2">
           <h5 class="white-text">Links</h5>
           <ul>
             <li>

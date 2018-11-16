@@ -11,12 +11,12 @@
     <div class="row">
       <div class="col s12 m8 offset-m2">
         <h5 class="center grey-text text-darken-3">I like writing code.</h5>
-        <h6 class="center grey-text text-darken-3">JAVASCRIPT / TYPESCRIPT / VUE | C# / .NET FRAMEWORK | DYNAMICS 365 | Azure</h6>
+        <h6 class="center grey-text text-darken-3">JAVASCRIPT / TYPESCRIPT / VUE | C# / .NET | DYNAMICS 365 | Azure</h6>
       </div>
     </div>
     <div class="row">
       <p class="grey-text text-darken-3">
-        Currently working as a Dynamics 365 Developer at 
+        Currently working as a Graduate Dynamics 365 Developer at 
         <a class="orange-text text-darken-2" href="https://www.intergen.co.nz/" target="_blank">Intergen</a>.
         Before that I was a student at the 
         <a class="orange-text text-darken-2" href="https://www.auckland.ac.nz/" target="_blank">University of Auckland</a>,
