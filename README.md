@@ -34,7 +34,7 @@ Make sure you have Node installed.
 _Note: I'm retrieving posts by connecting to Firebase using a config file that is not available within this source code. In order to have posts to look at, you must create your own Firebase project and use that connection string instead._
 
 ```bash
-$ git clone https://github.io/alrobilliard/portfoliosite-vuejs
+$ git clone https://github.io/alrobilliard/portfolio-site
 $ cd portfoliosite-vuejs
 $ npm install
 $ npm run serve
