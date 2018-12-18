@@ -1,5 +1,5 @@
 <template>
-  <app-article v-bind:postId="'-LHpTL0aWmKaQo-Dq6ag'"></app-article>
+  <app-article v-bind:postId="'My-First-Post'"></app-article>
 </template>
 
 <script>
