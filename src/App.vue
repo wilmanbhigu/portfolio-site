@@ -111,7 +111,7 @@ main {
   overflow: hidden;
 }
 .card .card-content {
-  height: 60%;
+  height: 100%;
   max-height: unset !important;
 }
 </style>
