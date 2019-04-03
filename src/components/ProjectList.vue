@@ -48,9 +48,9 @@ export default {
         var projectsArray = [];
         for (let key in data) {
           data[key].id = key;
-          //if (data[key].published) {
-          projectsArray.push(data[key]);
-          //}
+          if (data[key].published) {
+            projectsArray.push(data[key]);
+          }
         }
         document.title = "Andrew Robilliard - Projects";
         this.projects = projectsArray.sort(this.dateCompare);
