@@ -1,10 +1,10 @@
 <template>
   <div class="container">
     <h3>Projects</h3>
-    <div v-if="projects.length > 0">
-      <input type="text" v-model="search" placeholder="Search projects" />
+    <div v-if="projects.length > 0 && loaded">
+      <input type="text" v-model="search" placeholder="Search projects">
       <div class="row">
-        <div v-if="loaded" v-for="project in filteredProjects" :key="project.id" class="col s12 m6 l4">
+        <div v-for="project in filteredProjects" :key="project.id" class="col s12 m6 l4">
           <image-card v-bind:card="project"></image-card>
         </div>
       </div>
@@ -17,15 +17,15 @@
 </template>
 
 <script>
-import ImageCard from './ImageCard.vue';
-import searchMixin from '../mixins/searchMixin';
+import ImageCard from "./ImageCard.vue";
+import searchMixin from "../mixins/searchMixin";
 
 export default {
   data() {
     return {
       projects: [],
       loaded: false,
-      search: ''
+      search: ""
     };
   },
   methods: {
@@ -48,18 +48,18 @@ export default {
         var projectsArray = [];
         for (let key in data) {
           data[key].id = key;
-          if (data[key].published) {
-            projectsArray.push(data[key]);
-          }
+          //if (data[key].published) {
+          projectsArray.push(data[key]);
+          //}
         }
-        document.title = 'Andrew Robilliard - Projects';
+        document.title = "Andrew Robilliard - Projects";
         this.projects = projectsArray.sort(this.dateCompare);
         this.loaded = true;
       });
   },
   mixins: [searchMixin],
   components: {
-    'image-card': ImageCard
+    "image-card": ImageCard
   }
 };
 </script>

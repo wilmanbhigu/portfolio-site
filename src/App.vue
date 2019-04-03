@@ -15,25 +15,25 @@
 </template>
 
 <script>
-import Navigation from './components/Navigation.vue';
-import LandingBio from './components/LandingBio.vue';
-import BlogList from './components/BlogList.vue';
-import ProjectList from './components/ProjectList.vue';
-import Footer from './components/Footer.vue';
+import Navigation from "./components/Navigation.vue";
+import LandingBio from "./components/LandingBio.vue";
+import BlogList from "./components/BlogList.vue";
+import ProjectList from "./components/ProjectList.vue";
+import Footer from "./components/Footer.vue";
 
 export default {
-  name: 'app',
+  name: "app",
   data() {
     return {
       currentYear: null
     };
   },
   components: {
-    'app-navigation': Navigation,
-    'landing-bio': LandingBio,
-    'blog-list': BlogList,
-    'project-list': ProjectList,
-    'app-footer': Footer
+    "app-navigation": Navigation,
+    "landing-bio": LandingBio,
+    "blog-list": BlogList,
+    "project-list": ProjectList,
+    "app-footer": Footer
   },
   methods: {
     getCurrentYear() {
@@ -87,7 +87,31 @@ main {
   -webkit-transition: color 0.2s; /* Safari */
   transition: color 0.2s;
 }
+
+.project-icons {
+  padding: 1rem;
+  margin: 1rem 0;
+  background-color: #263238;
+  border-radius: 5px;
+}
+
+.project-icons i {
+  font-size: 3rem;
+  margin-right: 1rem;
+}
+.project-icons i:last-of-type {
+  margin-right: 0;
+}
 /**
+  Materialize Overrides
   ---------------------------------------------------------------
 **/
+
+.card.medium {
+  overflow: hidden;
+}
+.card .card-content {
+  height: 60%;
+  max-height: unset !important;
+}
 </style>
