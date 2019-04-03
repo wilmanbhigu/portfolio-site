@@ -1,16 +1,19 @@
 <template>
   <div id="article-wrapper">
     <div v-if="isLoaded" class="container white" id="article-container">
-        <div class="col s12" v-if="this.id != null">
-          <router-link v-bind:to="this.parent.route" class="breadcrumb">{{this.parent.name}}</router-link>
-          <router-link v-bind:to="this.$route.path" class="breadcrumb">{{this.article.title}}</router-link>
-        </div>
-        <h3>{{article.title}}</h3>
-        <h5>{{article.created}}</h5>
-        <article id="fetched-article" v-cloak v-html="article.content"></article>
+      <div class="col s12" v-if="this.id != null">
+        <router-link v-bind:to="this.parent.route" class="breadcrumb">{{this.parent.name}}</router-link>
+        <router-link v-bind:to="this.$route.path" class="breadcrumb">{{this.article.title}}</router-link>
+      </div>
+      <h3>{{article.title}}</h3>
+      <h5>{{article.created}}</h5>
+      <article id="fetched-article" v-cloak v-html="article.content"></article>
     </div>
     <div v-if="isLoaded" class="fixed-action-btn">
-      <a v-on:click.prevent="scrollToTop" class="waves-effect waves-light btn-floating btn-large orange darken-2 pulse">
+      <a
+        v-on:click.prevent="scrollToTop"
+        class="waves-effect waves-light btn-floating btn-large orange darken-2 pulse"
+      >
         <i class="material-icons large">vertical_align_top</i>
       </a>
     </div>
@@ -26,27 +29,27 @@ export default {
       isLoaded: false,
       parent: null,
       days: [
-        'Sunday',
-        'Monday',
-        'Tuesday',
-        'Wednesday',
-        'Thursday',
-        'Friday',
-        'Saturday'
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
       ],
       months: [
-        'January',
-        'February',
-        'March',
-        'April',
-        'May',
-        'June',
-        'July',
-        'August',
-        'September',
-        'October',
-        'November',
-        'December'
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"
       ]
     };
   },
@@ -59,23 +62,26 @@ export default {
       } ${date.getFullYear()}`;
     },
     getParent() {
-      let childStartIndex = this.$route.path.lastIndexOf('/');
+      let childStartIndex = this.$route.path.lastIndexOf("/");
       let route = this.$route.path.slice(0, childStartIndex);
-      let name = route != '/blog' ? route.slice(1) : 'posts';
+      let name = route != "/projects" ? "posts" : "projects";
       return {
         name: name,
         route: route
       };
     },
     scrollToTop() {
-      $('html, body').animate({ scrollTop: 0 }, 'slow');
+      $("html, body").animate({ scrollTop: 0 }, "slow");
       return false;
     }
   },
-  props: ['postId'],
+  props: ["postId"],
   created() {
+    const childStartIndex = this.$route.path.lastIndexOf("/"),
+      route = this.$route.path.slice(0, childStartIndex),
+      articleType = route != "/projects" ? "posts" : "projects";
     this.$http
-      .get(`${this.$baseUrl}/posts/${this.postId || this.id}.json`)
+      .get(`${this.$baseUrl}/${articleType}/${this.postId || this.id}.json`)
       .then(data => {
         return data.json();
       })
