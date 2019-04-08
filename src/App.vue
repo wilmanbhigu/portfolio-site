@@ -93,6 +93,7 @@ main {
   margin: 1rem 0;
   background-color: #263238;
   border-radius: 5px;
+  overflow-x: scroll;
 }
 
 .project-icons i {
